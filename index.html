@@ -332,9 +332,9 @@ footer a:hover{color:var(--paper)}
         <div class="panel">
           <h3>1 · Machine & dates</h3>
           <div class="opt-row" id="machinePick">
-            <div class="opt sel" data-m="excavator" onclick="pickMachine(this)">Kobelco 4.5T Excavator<small>from $199</small></div>
-            <div class="opt" data-m="tipper" onclick="pickMachine(this)">Hino 5.5T Tipper<small>from $229 · MR licence</small></div>
-            <div class="opt" data-m="combo" onclick="pickMachine(this)">Combo — both<small>save $60/day</small></div>
+            <div class="opt sel" data-m="excavator" onclick="pickMachine(this)">Kobelco 4.5T Excavator<small>from $220</small></div>
+            <div class="opt" data-m="tipper" onclick="pickMachine(this)">Hino 5.5T Tipper<small>from $170 · MR licence</small></div>
+            <div class="opt" data-m="combo" onclick="pickMachine(this)">Combo — both<small>save $65/day</small></div>
           </div>
 
           <label class="f">Hire length</label>
@@ -351,7 +351,8 @@ footer a:hover{color:var(--paper)}
             <label class="f">Excavator attachments (optional)</label>
             <div class="opt-row">
               <div class="opt" data-a="auger" onclick="this.classList.toggle('sel');calcPrice()">Auger + drives<small>+$60/day</small></div>
-              <div class="opt" data-a="breaker" onclick="this.classList.toggle('sel');calcPrice()">Rock breaker<small>+$90/day</small></div>
+              <div class="opt" data-a="breaker" onclick="this.classList.toggle('sel');calcPrice()">Rock breaker<small>+$120/day</small></div>
+              <div style="align-self:center;font-size:12.5px;color:var(--mut)">Both: $150/day</div>
             </div>
           </div>
 
@@ -451,8 +452,8 @@ footer a:hover{color:var(--paper)}
           <div class="row" style="border:none"><span style="color:var(--mut);font-size:13px" id="bondLine">Bond (pre-auth at pickup): $500</span></div>
           <button class="btn" style="width:100%;margin-top:14px;font-size:17px" id="payBtn" onclick="submitBooking()">Book & pay deposit →</button>
           <p style="font-size:12.5px;color:var(--mut);margin-top:12px">🔒 Secured by Stripe. Dates held instantly; deposit confirms. Full refund if you cancel 7+ days out, 50% between 2–7 days.</p>
-          <div class="msg err" id="errBox"></div>
-          <div class="msg ok" id="okBox"></div>
+          <div class="msg" id="errBox"></div>
+          <div class="msg" id="okBox"></div>
         </div>
       </div>
     </div>
