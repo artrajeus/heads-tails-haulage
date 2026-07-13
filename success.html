@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en-AU">
+<head>
+<meta charset="UTF-8"><meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Booking confirmed | Heads & Tails Haulage</title>
+<meta name="robots" content="noindex">
+<link href="https://fonts.googleapis.com/css2?family=Barlow+Condensed:wght@700;800&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
+<style>
+:root{--ink:#0e1113;--panel:#171c20;--line:#2c343a;--orange:#ff6a00;--orange2:#ff8b33;--paper:#f5f3ee;--mut:#9fb0ba;--ok:#37c978}
+*{margin:0;padding:0;box-sizing:border-box}
+body{background:var(--ink);color:var(--paper);font-family:Inter,system-ui,sans-serif;line-height:1.6;display:flex;min-height:100vh;align-items:center;justify-content:center;padding:20px}
+.card{max-width:560px;background:var(--panel);border:1px solid var(--line);border-radius:18px;padding:44px;text-align:center}
+h1{font-family:'Barlow Condensed',sans-serif;text-transform:uppercase;font-size:36px;margin:16px 0 10px}
+p{color:var(--mut);margin:10px 0}
+.big{font-size:56px}
+.btn{display:inline-block;background:var(--orange);color:#fff;font-weight:700;padding:13px 26px;border-radius:8px;text-decoration:none;margin-top:18px}
+#ref{color:var(--orange2);font-weight:700}
+</style>
+</head>
+<body>
+<div class="card">
+  <div class="big" id="icon">⏳</div>
+  <h1 id="title">Checking your payment…</h1>
+  <p id="msg">Hang tight — confirming your deposit with Stripe.</p>
+  <p>Booking reference: <span id="ref">—</span></p>
+  <a class="btn" href="index.html">Back to Heads & Tails Haulage</a>
+</div>
+<script>
+var CONFIG = { API_URL: '__API_URL__' };
+var q = new URLSearchParams(location.search);
+document.getElementById('ref').textContent = q.get('ref') || '—';
+if (q.get('session_id') && CONFIG.API_URL.indexOf('__') !== 0) {
+  fetch(CONFIG.API_URL + '?action=stripe_confirm&session_id=' + encodeURIComponent(q.get('session_id')))
+    .then(function(r){return r.json();})
+    .then(function(j){
+      if (j.paid) {
+        document.getElementById('icon').textContent='✅';
+        document.getElementById('title').textContent='Booking confirmed!';
+        document.getElementById('msg').innerHTML='Deposit received — your dates are locked in. A confirmation email is on its way with pickup details for our Crafers yard.<br><br><b>Bring:</b> your driver licence, and the card used to book (for the bond pre-auth).';
+      } else {
+        document.getElementById('icon').textContent='🕐';
+        document.getElementById('title').textContent='Payment pending';
+        document.getElementById('msg').textContent='We haven\'t seen the deposit land yet. If you completed payment, refresh in a minute — or email artrajeus@gmail.com and we\'ll sort it.';
+      }
+    })
+    .catch(function(){
+      document.getElementById('title').textContent='Booking received';
+      document.getElementById('msg').textContent='We\'ll email you as soon as your deposit is confirmed.';
+    });
+} else {
+  document.getElementById('icon').textContent='✅';
+  document.getElementById('title').textContent='Booking received';
+  document.getElementById('msg').textContent='Check your email for your booking summary and next steps.';
+}
+</script>
+</body>
+</html>

@@ -1,0 +1,5 @@
+User-agent: *
+Allow: /
+Disallow: /success.html
+
+Sitemap: https://artrajeus.github.io/heads-tails-haulage/sitemap.xml
