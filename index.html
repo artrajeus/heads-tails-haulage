@@ -157,9 +157,9 @@ footer a:hover{color:var(--paper)}
 <script type="application/ld+json">
 {"@context":"https://schema.org","@type":"LocalBusiness","@id":"https://artrajeus.github.io/heads-tails-haulage/#business",
 "name":"Heads & Tails Haulage","description":"Excavator and tipper truck dry hire in the Adelaide Hills. 4.5 tonne Kobelco excavator with auger and rock breaker, 5.5 tonne Hino tipper. Online booking with live availability, yard pickup in Crafers SA.",
-"url":"https://artrajeus.github.io/heads-tails-haulage/","email":"artrajeus@gmail.com",
-"address":{"@type":"PostalAddress","addressLocality":"Crafers","addressRegion":"SA","postalCode":"5152","addressCountry":"AU"},
-"geo":{"@type":"GeoCoordinates","latitude":-35.0053,"longitude":138.7083},
+"url":"https://artrajeus.github.io/heads-tails-haulage/","email":"headsandtails@gmail.com","telephone":"+61414689574",
+"address":{"@type":"PostalAddress","streetAddress":"454 Mount Barker Road","addressLocality":"Crafers West","addressRegion":"SA","postalCode":"5152","addressCountry":"AU"},
+"geo":{"@type":"GeoCoordinates","latitude":-35.0089,"longitude":138.6975},
 "openingHours":"Mo-Sa 07:00-17:00","priceRange":"$199-$1395",
 "areaServed":["Adelaide Hills","Crafers","Stirling","Aldgate","Bridgewater","Hahndorf","Mount Barker","Blackwood","Belair","Mitcham","Brighton","Christies Beach","Morphett Vale","Adelaide"],
 "makesOffer":[
@@ -300,7 +300,7 @@ footer a:hover{color:var(--paper)}
       </div>
       <div class="dcard">
         <h3>Wet hire — machine + operator</h3>
-        <p>Wet hire includes an operator and is usually charged by the hour with minimum call-outs. We can quote wet hire for bigger jobs on request — <a href="mailto:artrajeus@gmail.com">email us</a> with your site and scope. But if you can drive it yourself, dry hire will save you serious money.</p>
+        <p>Wet hire includes an operator and is usually charged by the hour with minimum call-outs. We can quote wet hire for bigger jobs on request — <a href="mailto:headsandtails@gmail.com">email us</a> with your site and scope. But if you can drive it yourself, dry hire will save you serious money.</p>
       </div>
     </div>
   </div>
@@ -485,7 +485,7 @@ footer a:hover{color:var(--paper)}
           <b>Heads <span>&</span> Tails Haulage</b>
         </a>
         <p>Excavator & tipper truck dry hire for the Adelaide Hills. Owner-operated, properly maintained, honestly priced.</p>
-        <p style="margin-top:10px">Crafers SA 5152 · <a href="mailto:artrajeus@gmail.com" style="display:inline">artrajeus@gmail.com</a><br>Phone: (final number coming soon)</p>
+        <p style="margin-top:10px">454 Mount Barker Road, Crafers West SA 5152<br><a href="tel:+61414689574" style="display:inline">0414 689 574</a> · <a href="mailto:headsandtails@gmail.com" style="display:inline">headsandtails@gmail.com</a></p>
       </div>
       <div>
         <h4>Hire</h4>
@@ -500,7 +500,7 @@ footer a:hover{color:var(--paper)}
         <a href="privacy.html">Privacy</a>
       </div>
     </div>
-    <p class="fineprint">© 2026 Heads and Tails Haulage Pty Ltd · ABN [to be inserted] · All prices include GST. Equipment subject to availability. Photography includes digitally enhanced imagery of our equipment class. Heads & Tails Haulage operates dry hire; hirers are responsible for equipment during the hire period — see <a href="terms.html">terms</a>.</p>
+    <p class="fineprint">© 2026 Heads and Tails Haulage Pty Ltd · ABN 36 657 016 496 · ACN 657 016 496 · All prices include GST. Equipment subject to availability. Photography includes digitally enhanced imagery of our equipment class. Heads & Tails Haulage operates dry hire; hirers are responsible for equipment during the hire period — see <a href="terms.html">terms</a>.</p>
   </div>
 </footer>
 
@@ -684,7 +684,7 @@ function submitBooking(){
       else showOk('<b>Booking '+j.ref+' received — dates held for 24 hrs.</b><br>Check your email: we\'ve sent your summary and deposit instructions ('+money(j.deposit)+').');
       loadAvailability();
     })
-    .catch(function(e){ btn.disabled=false; btn.textContent='Book & pay deposit →'; showErr('Something went wrong sending your booking — please try again or email artrajeus@gmail.com.'); });
+    .catch(function(e){ btn.disabled=false; btn.textContent='Book & pay deposit →'; showErr('Something went wrong sending your booking — please try again or email headsandtails@gmail.com.'); });
 }
 /* ================= init ================= */
 pickMachine(document.querySelector('#machinePick .opt[data-m="excavator"]'));
